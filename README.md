@@ -9,7 +9,7 @@ A low code platform run with github actions， powered by daas and Knowlege Spec
 
 ![Steps](/doc/step-02.jpg)
 
-## Step #3: Modify modle.xml in YOUR repo
+## Step #3: Modify modle.xml (A KSML file) in YOUR repo
 
 ![Steps](/doc/step-03.jpg)
 
