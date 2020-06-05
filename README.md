@@ -1,8 +1,8 @@
 # daas-with-github-actions
 A low code platform run with github actions， powered by daas and Knowlege Spec Markup Language(KSML), running on Github Actions infrastructure
 
-Learn more with daas and KSML https://github.com/doublechaintech/daas-start-kit
-Learn more with github actions https://github.com/features/actions
+* Learn more with daas and KSML https://github.com/doublechaintech/daas-start-kit
+* Learn more with github actions https://github.com/features/actions
 
 
 ## Step #1: Fork Me
