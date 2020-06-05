@@ -59,14 +59,14 @@ jobs:
         path: models
     - name: generate code
       run: |
-        ./daas-client/gencode.sh ./models/model.xml all .
+        ./daas-client/gencode.sh ./models/model.xml all /home/runner/work/daas-sample/daas-sample/
     - name: create tables and import sample data
       run: |
-        cd /home/runner/work/daas-sample/daas-sample/./bizcore/WEB-INF/model_core_src/META-INF/
+        cd /home/runner/work/daas-sample/daas-sample/bizcore/WEB-INF/model_core_src/META-INF/
         mysql -uroot -p0254891276 -h127.0.0.1 < model_mysql.sql
     - name: start backend
       run: |
-        cd /home/runner/work/daas-sample/daas-sample/./bizcore
+        cd /home/runner/work/daas-sample/daas-sample/bizcore
         gradle classes
         gradle copyJar
         ln -s /home/runner/work/daas-sample/daas-sample/bizcore /home/runner/resin-3.1.16/webapps/model
