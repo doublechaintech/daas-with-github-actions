@@ -1,16 +1,16 @@
 <root org="doublechain"
-    chinese_name="简单产品管理V1.0"
-    english_name="简单产品管理"
+    chinese_name="Simple Product Management"
+    english_name="Simple Product Management"
 >
 
 
     <platform
-        name="简单产品管理|简单产品管理"
+        name="Simple Product Management|简单产品管理"
         founded="now()"
         contact_number="992887654321"
     />
     <brand name="brand"  platform="platform()"/>
-    <product name="宝马|奔驰|布加迪" brand="brand()" image="snack.jpg" platform="platform()"/>
+    <product name="BMW|Benz|Bugatti" brand="brand()" image="snack.jpg" platform="platform()"/>
 
     <sku name="sku" product="product()" platform="platform()" create_time="createTime()"/>
    
