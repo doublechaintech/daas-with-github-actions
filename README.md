@@ -2,18 +2,24 @@
 A low code platform run with github actions
 
 
-![Steps](/doc/steps.jpg)
+
 
 
 ## Step #1: Fork Me 
 
+![Steps](/doc/step-01.jpg)
+
 ## Step #2: Enable Github Actions
+
+![Steps](/doc/step-02.jpg)
 
 ## Step #3: Modify modle.xml in YOUR repo
 
+![Steps](/doc/step-03.jpg)
+
 ## Step #4: Wait for 5 mins OR observe github actions
 
-![Steps](/doc/git-actions-running.jpg)
+![Steps](/doc/step-04.jpg)
 
 
 ## Step #5: Wow!!
