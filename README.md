@@ -18,7 +18,10 @@ A low code platform run with github actions
 
 ## Step #5: Wow!!
 
-Browse to http://lab.doublechaintech.com/[your-github-login]/index.html
+* Browse to http://lab.doublechaintech.com/[your-github-login]/index.html
+* Input 13900000001/admin123 to play
+
+
 ![Steps](/doc/final-ui.jpg)
 Please replace [your-github-login] to your github login
 
