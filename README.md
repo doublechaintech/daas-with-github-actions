@@ -15,9 +15,9 @@ A low code platform run with github actions
 
 ## Step #5: Wow!!
 
-browse to http://lab.doublechaintech.com/<your-github-login>/index.html
+browse to http://lab.doublechaintech.com/[your-github-login]/index.html
 
-Please replace your-github-login to your github login
+Please replace [your-github-login] to your github login
 
 
  
