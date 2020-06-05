@@ -1,18 +1,10 @@
-<root org="doublechain"
-    chinese_name="Simple Product Management v1.1"
-    english_name="Simple Product Management"
->
+<root org="doublechaintech" 
+	chinese_name="医生排班系统" 
+	english_name="Doctor Scheduling System">
 
-
-    <platform
-        name="Simple Product Management|简单产品管理"
-        founded="now()"
-        contact_number="992887654321"
-    />
-    <brand name="brand"  platform="platform()"/>
-    <product name="BMW|Benz|Bugatti" brand="brand()" image="snack.jpg" platform="platform()"/>
-
-    <sku name="sku" product="product()" platform="platform()" create_time="createTime()"/>
-   
-    
-</root>
+    <hospital   
+        name="上和医院|[1,200]"  
+        address="毕升路22号" 
+        telephone="028-9123123" />
+	
+</root>  
