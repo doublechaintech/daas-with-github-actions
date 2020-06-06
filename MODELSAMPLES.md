@@ -69,7 +69,7 @@
         founded="now()"
         contact_number="992887654321"
     />
-    <brand name="Candys|Sees"  platform="platform()"/>
+    <brand name="Candys|Sees|[1,100]"  platform="platform()"/>
     <product name="popcorn|chocolate" image="snack.jpg" brand="brand()"  platform="platform()"/>
     
 </root>
