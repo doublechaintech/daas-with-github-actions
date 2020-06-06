@@ -1,10 +1,14 @@
-<root org="doublechaintech" 
-	chinese_name="医生排班系统" 
-	english_name="Doctor Scheduling System">
-
-    <hospital   
-        name="上和医院|[1,200]"  
-        address="毕升路22号" 
-        telephone="028-9123123" />
-	
-</root>  
+<root org="doublechain"
+    chinese_name="Simple PIM"
+    english_name="Product Information Management"
+>
+    <platform
+        name="PIM"
+        founded="now()"
+        contact_number="992887654321"
+    />
+    <brand name="Candys|Sees"  platform="platform()"/>
+    <product name="popcorn|chocklate" image="snack.jpg" brand="brand()"  platform="platform()"/>
+    <sku name="sku" product="product()" brand="brand()" platform="platform()" create_time="createTime()"/>
+</root>
+ 
