@@ -70,7 +70,7 @@
         contact_number="992887654321"
     />
     <brand name="Candys|Sees"  platform="platform()"/>
-    <product name="popcorn|chocklate" image="snack.jpg" brand="brand()"  platform="platform()"/>
+    <product name="popcorn|chocolate" image="snack.jpg" brand="brand()"  platform="platform()"/>
     
 </root>
   
