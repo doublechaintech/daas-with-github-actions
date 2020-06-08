@@ -6,7 +6,7 @@ A low code platform run with github actions， powered by daas and Knowlege Spec
 
 * Learn more with daas and KSML https://github.com/doublechaintech/daas-start-kit
 * Learn more with github actions https://github.com/features/actions
-
+* Go to [MODELSAMPLES.md](/MODELSAMPLES.md) to try more samples.
 
 
 
