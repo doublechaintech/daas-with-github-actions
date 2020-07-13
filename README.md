@@ -4,10 +4,10 @@
 # 1. daas-with-github-actions
 A low code platform run with github actions， powered by daas and Knowlege Spec Markup Language(KSML), running on Github Actions infrastructure
 
-* Learn more with daas and KSML https://github.com/doublechaintech/daas-start-kit
+* Learn more about daas and KSML https://github.com/doublechaintech/daas-start-kit
+* Learn more about custom backend java code: https://kdocs.cn/l/sUdwkkyZD?f=130
 * Learn more with github actions https://github.com/features/actions
 * Go to [MODELSAMPLES.md](/MODELSAMPLES.md) to try more samples.
-
 
 
 
@@ -42,7 +42,8 @@ Please replace [your-github-login] to your github login
 
 ## 1.6. Step #6: Star Me
 
-Star me if you believe it is fantastic! Please visit https://github.com/doublechaintech/daas-start-kit and save model.xml to a model name like product.xml to generate source code and deploy your project locally.
+* Star me if you believe it is fantastic! 
+* Please visit https://github.com/doublechaintech/daas-start-kit and save model.xml to a model name like product.xml to generate source code and deploy your project locally.
 
 
 
