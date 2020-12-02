@@ -9,6 +9,14 @@ A low code platform run with github actions， powered by daas and Knowlege Spec
 * Learn more with github actions https://github.com/features/actions
 * Go to [MODELSAMPLES.md](/MODELSAMPLES.md) to try more samples.
 
+This is a full stack app running on Github Actions, includes
+
+* MySQL
+* Redis
+* App Server(Caucho Resin)
+* React Frontend
+
+
 
 
 ## 1.1. Step #1: Fork Me
