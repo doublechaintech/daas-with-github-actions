@@ -16,7 +16,7 @@ This is a full stack app running on Github Actions, includes
 * App Server(Caucho Resin)
 * React Frontend
 
-Please reference .github/workflows/daas.yml for details.
+Please reference [Github Actions definition](.github/workflows/daas.yml)  for details.
 
 
 ## 1.1. Step #1: Fork Me
