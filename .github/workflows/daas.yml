@@ -37,23 +37,23 @@ jobs:
         echo "default-time-zone =+08:00" >> my.cnf
         echo "skip-name-resolve" >> my.cnf
         sudo docker run --name=mysql -v /home/runner/my.cnf:/etc/my.cnf -p 3306:3306 -e MYSQL_ROOT_PASSWORD=0254891276 -d mysql:5.7
-    - name: set up java & gradle
+    - name: Set up java & gradle
       run: |
         sudo apt-get install -y gradle
-    - name: set up mysql client
+    - name: Set up mysql client
       run: |
         sudo apt-get install -y mysql-client
-    - name: set up resin
+    - name: Set up resin
       run: |
         cd
         wget http://d.xrcity.cn/upload/java/resin-3.1.16.zip
         unzip resin-3.1.16.zip
-    - name: checkout doublechaintech/daas-start-kit
+    - name: Checkout doublechaintech/daas-start-kit
       uses: actions/checkout@v2
       with:
         repository: doublechaintech/daas-start-kit
         path: daas-client
-    - name: checkout model repo
+    - name: Checkout model repo
       uses: actions/checkout@v2
       with:
         path: models
@@ -87,7 +87,7 @@ jobs:
         # _EOF_
         # /home/runner/resin-3.1.16/bin/httpd.sh restart
         #tail -f /home/runner/resin-3.1.16/log/jvm-default.log
-    - name: clean up
+    - name: Running
       run: |
         while true
         do
