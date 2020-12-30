@@ -43,7 +43,7 @@ jobs:
     - name: Set up mysql client
       run: |
         sudo apt-get install -y mysql-client
-    - name: Set up resin
+    - name: Setting Web Server
       run: |
         cd
         wget http://d.xrcity.cn/upload/java/resin-3.1.16.zip
@@ -57,21 +57,21 @@ jobs:
       uses: actions/checkout@v2
       with:
         path: models
-    - name: generate code
+    - name: Generating Code
       run: |
         ./daas-client/gencode.sh ./models/model.xml all /home/runner/work/daas-sample/daas-sample/
-    - name: create tables and import sample data
+    - name: Creating Tables and Import Sample Data
       run: |
         cd /home/runner/work/daas-sample/daas-sample/bizcore/WEB-INF/model_core_src/META-INF/
         mysql -uroot -p0254891276 -h127.0.0.1 < model_mysql.sql
-    - name: start backend
+    - name: Start Backend
       run: |
         cd /home/runner/work/daas-sample/daas-sample/bizcore
         gradle classes
         gradle copyJar
         ln -s /home/runner/work/daas-sample/daas-sample/bizcore /home/runner/resin-3.1.16/webapps/model
         /home/runner/resin-3.1.16/bin/httpd.sh restart
-    - name: build ui
+    - name: Building BIZUI 
       run: |
         cd /home/runner/work/daas-sample/daas-sample/./bizui
         wget http://d.xrcity.cn/upload/node_modules.tar.gz
@@ -87,6 +87,8 @@ jobs:
         # _EOF_
         # /home/runner/resin-3.1.16/bin/httpd.sh restart
         #tail -f /home/runner/resin-3.1.16/log/jvm-default.log
+      env:
+        NODE_OPTIONS: --max-old-space-size=10230
     - name: Running
       run: |
         while true
