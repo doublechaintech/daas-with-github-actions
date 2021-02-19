@@ -3,6 +3,7 @@
     english_name="Product Information Management"
 >
     <platform
+              
         name="PIM"
         founded="now()"
         contact_number="992887654321"
