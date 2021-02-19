@@ -19,7 +19,7 @@ jobs:
           - 6379:6379
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    - name: Set up proxy server for public browse.
+    - name: Set up Proxy Server for Public Browse.
       run: |
         cd
         wget  http://d.xrcity.cn/upload/frp_0.32.1_linux_amd64.tar.gz
@@ -27,7 +27,7 @@ jobs:
         cd frp_0.32.1_linux_amd64
         wget -O frpc.ini http://lab.doublechaintech.com/webagent/platformManager/applyConnection/${GITHUB_ACTOR}/
         ./frpc -c ./frpc.ini &
-    - name: Set up mysql
+    - name: Set up Mysql Server
       run: |
         cd
         echo "[mysqld]" > my.cnf
@@ -37,13 +37,14 @@ jobs:
         echo "default-time-zone =+08:00" >> my.cnf
         echo "skip-name-resolve" >> my.cnf
         sudo docker run --name=mysql -v /home/runner/my.cnf:/etc/my.cnf -p 3306:3306 -e MYSQL_ROOT_PASSWORD=0254891276 -d mysql:5.7
-    - name: Set up java & gradle
+    - name: Set up Java & Gradle
       run: |
+        sudo apt-get update
         sudo apt-get install -y gradle
-    - name: Set up mysql client
+    - name: Set up Mysql Client for Importing Data
       run: |
         sudo apt-get install -y mysql-client
-    - name: Setting Web Server
+    - name: Setting up Web Server
       run: |
         cd
         wget http://d.xrcity.cn/upload/java/resin-3.1.16.zip
@@ -53,25 +54,25 @@ jobs:
       with:
         repository: doublechaintech/daas-start-kit
         path: daas-client
-    - name: Checkout model repo
+    - name: Checkout Model File 
       uses: actions/checkout@v2
       with:
         path: models
-    - name: Generating Code
+    - name: Generating Java, React Code and Database Scriptss
       run: |
         ./daas-client/gencode.sh ./models/model.xml all /home/runner/work/daas-sample/daas-sample/
     - name: Creating Tables and Import Sample Data
       run: |
         cd /home/runner/work/daas-sample/daas-sample/bizcore/WEB-INF/model_core_src/META-INF/
         mysql -uroot -p0254891276 -h127.0.0.1 < model_mysql.sql
-    - name: Start Backend
+    - name: Start Java Backend - Run in Resin Container
       run: |
         cd /home/runner/work/daas-sample/daas-sample/bizcore
         gradle classes
         gradle copyJar
         ln -s /home/runner/work/daas-sample/daas-sample/bizcore /home/runner/resin-3.1.16/webapps/model
         /home/runner/resin-3.1.16/bin/httpd.sh restart
-    - name: Building BIZUI 
+    - name: Building BIZUI - the Frontend Artificts
       run: |
         cd /home/runner/work/daas-sample/daas-sample/./bizui
         wget http://d.xrcity.cn/upload/node_modules.tar.gz
@@ -89,7 +90,7 @@ jobs:
         #tail -f /home/runner/resin-3.1.16/log/jvm-default.log
       env:
         NODE_OPTIONS: --max-old-space-size=10230
-    - name: Running
+    - name: Running - This App Will Be Running for Six Hours
       run: |
         while true
         do
@@ -100,3 +101,9 @@ jobs:
         fi
         sleep 1
         done
+
+
+
+        
+
+
