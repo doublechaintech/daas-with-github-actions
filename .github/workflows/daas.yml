@@ -19,6 +19,10 @@ jobs:
           - 6379:6379
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+    - uses: actions/setup-java@v2
+      with:
+        distribution: 'adopt' # See 'Supported distributions' for available options
+        java-version: '8'
     - name: Set up Proxy Server for Public Browse.
       run: |
         cd
@@ -41,6 +45,7 @@ jobs:
       run: |
         sudo apt-get update
         sudo apt-get install -y gradle
+        sudo apt-get install -y curl
     - name: Set up Mysql Client for Importing Data
       run: |
         sudo apt-get install -y mysql-client
@@ -63,7 +68,7 @@ jobs:
         ./daas-client/gencode.sh ./models/model.xml all /home/runner/work/daas-sample/daas-sample/
     - name: Creating Tables and Import Sample Data
       run: |
-        cd /home/runner/work/daas-sample/daas-sample/bizcore/WEB-INF/model_core_src/META-INF/
+        cd /home/runner/work/daas-sample/daas-sample/data
         mysql -uroot -p0254891276 -h127.0.0.1 < model_mysql.sql
     - name: Start Java Backend - Run in Resin Container
       run: |
@@ -101,9 +106,5 @@ jobs:
         fi
         sleep 1
         done
-
-
-
-        
 
 
