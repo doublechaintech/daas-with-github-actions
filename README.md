@@ -14,10 +14,11 @@ This is a full stack app running on Github Actions, includes
 * MySQL
 * Redis
 * App Server(Caucho Resin)
-* React Frontend
+* React/Ant Design Frontend
 
 Please reference [Github Actions definition](.github/workflows/daas.yml)  for details.
 
+Preview an long running instance: http://lab.doublechaintech.com/philipgreat/index.html
 
 ## 1.1. Step #1: Fork Me
 
