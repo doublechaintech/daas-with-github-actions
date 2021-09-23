@@ -26,7 +26,7 @@ jobs:
     - name: Set up Proxy Server for Public Browse.
       run: |
         cd
-        wget  http://d.xrcity.cn/upload/frp_0.32.1_linux_amd64.tar.gz
+        wget  -q http://d.xrcity.cn/upload/frp_0.32.1_linux_amd64.tar.gz
         tar -xvzf frp_0.32.1_linux_amd64.tar.gz
         cd frp_0.32.1_linux_amd64
         wget -O frpc.ini http://lab.doublechaintech.com/webagent/platformManager/applyConnection/${GITHUB_ACTOR}/
@@ -44,7 +44,11 @@ jobs:
     - name: Set up Java & Gradle
       run: |
         sudo apt-get update
-        sudo apt-get install -y gradle
+        
+        wget http://d.xrcity.cn/upload/gradle-7.2-bin.zip
+        sudo mkdir /opt/gradle
+        sudo unzip -d /opt/gradle gradle-7.2-bin.zip
+        export PATH="/opt/gradle/bin:$PATH"
         sudo apt-get install -y curl
     - name: Set up Mysql Client for Importing Data
       run: |
@@ -52,7 +56,7 @@ jobs:
     - name: Setting up Web Server
       run: |
         cd
-        wget http://d.xrcity.cn/upload/java/resin-3.1.16.zip
+        wget -q http://d.xrcity.cn/upload/java/resin-3.1.16.zip
         unzip resin-3.1.16.zip
     - name: Checkout doublechaintech/daas-start-kit
       uses: actions/checkout@v2
@@ -80,7 +84,7 @@ jobs:
     - name: Building BIZUI - the Frontend Artificts
       run: |
         cd /home/runner/work/daas-sample/daas-sample/./bizui
-        wget http://d.xrcity.cn/upload/node_modules.tar.gz
+        wget -q http://d.xrcity.cn/upload/node_modules.tar.gz
         tar xzf node_modules.tar.gz
         npm run build && cp -R dist/* /home/runner/resin-3.1.16/webapps/ROOT
         # cd /home/runner/resin-3.1.16/webapps/ROOT/WEB-INF
@@ -106,5 +110,4 @@ jobs:
         fi
         sleep 1
         done
-
 
